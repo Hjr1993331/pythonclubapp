@@ -11,27 +11,29 @@ class TechType(models.Model):
         return self.typename
 
     class Meta:
-        db_table='techtype'
+        db_table='meetingtype'
 
 class Product(models.Model):
-    productname=models.CharField(max_length=255)
-    producttype=models.ForeignKey(TechType, on_delete=models.DO_NOTHING)
+    meetingname=models.CharField(max_length=255)
+    meetingtitle=models.CharField(max_length=255)
+    meetinglocation=models.CharField(max_length=255)
+    meetingtype=models.ForeignKey(TechType, on_delete=models.DO_NOTHING)
+    meetingid=models.ForeignKey(Id, on_delete=models.DO_NOTHING)
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
     dateentered=models.DateField()
-    price=models.DecimalField(max_digits = 6, decimal_places = 2)
-    producturl=models.URLField()
+    meetingurl=models.URLField()
     description=models.TextField()
 
     def __str__(self):
-        return self.productname
+        return self.meetingname
 
     class Meta:
-        db_table='product'
+        db_table='meeting'
 
 class Review(models.Model):
     title=models.CharField(max_length=255)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
-    product=models.ForeignKey(Product, on_delete=models.CASCADE)
+    meeting=models.ForeignKey(Product, on_delete=models.CASCADE)
     reviewdate=models.DateField()
     reviewtext=models.TextField()                    
 
