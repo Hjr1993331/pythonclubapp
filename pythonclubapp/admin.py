@@ -4,3 +4,6 @@ from .models import MeetingType, Meeting, Review
 admin.site.register(MeetingType)
 admin.site.register(Meeting)
 admin.site.register(Review)
+
+
+ooooo
