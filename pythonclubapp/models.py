@@ -14,7 +14,7 @@ class MeetingType(models.Model):
     class Meta:
         db_table='meetingtype'
 
-class Meeting(models.Model):
+class Meetings(models.Model):
     meetingname=models.CharField(max_length=255)
     meetingtitle=models.CharField(max_length=255)
     meetinglocation=models.CharField(max_length=255)

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import MeetingType, Meeting, Review
+from .models import MeetingType, Meetings, Review
 # Register your models here.
 admin.site.register(MeetingType)
-admin.site.register(Meeting)
+admin.site.register(Meetings)
 admin.site.register(Review)
 
