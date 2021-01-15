@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class MeetingType(models.Model):
+class MeetingMinute(models.Model):
     typename=models.CharField(max_length=255)
     typedescription=models.TextField(null=True, blank=True)
 
@@ -12,16 +12,16 @@ class MeetingType(models.Model):
         return self.typename
 
     class Meta:
-        db_table='meetingtype'
+        db_table='meetingminute'
 
-class Meetings(models.Model):
+class Meeting(models.Model):
     meetingname=models.CharField(max_length=255)
-    meetingtitle=models.CharField(max_length=255)
-    meetinglocation=models.CharField(max_length=255)
-    meetingtype=models.ForeignKey(MeetingType, on_delete=models.DO_NOTHING)
-    # id=models.ForeignKey(Id, on_delete=models.DO_NOTHING)
+    productlocation=models.CharField(max_length=255)
+    meetingtype=models.ForeignKey(MeetingMinute, on_delete=models.DO_NOTHING)
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    producttime=models.TimeField()
     dateentered=models.DateField()
+    price=models.DecimalField(max_digits=6, decimal_places=2)
     meetingurl=models.URLField()
     description=models.TextField()
 
@@ -31,15 +31,17 @@ class Meetings(models.Model):
     class Meta:
         db_table='meeting'
 
-class Review(models.Model):
+class Resource(models.Model):
     title=models.CharField(max_length=255)
+    location=models.CharField(max_length=255)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     meeting=models.ForeignKey(Meeting, on_delete=models.CASCADE)
-    reviewdate=models.DateField()
-    reviewtext=models.TextField()                    
+    resourcetime=models.TimeField()
+    resourcedate=models.DateField()
+    resourcetext=models.TextField()                    
 
     def __str__(self):
         return self.title
 
     class Meta:
-        db_table='review' 
+        db_table='resource' 
