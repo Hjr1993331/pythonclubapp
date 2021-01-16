@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('meetingid', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'db_table': 'meetin',
+                'db_table': 'meeting',
             },
         ),
         migrations.CreateModel(
