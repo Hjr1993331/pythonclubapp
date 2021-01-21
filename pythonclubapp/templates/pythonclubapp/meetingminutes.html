@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>MeetingMinutes</h2>
+<ul>
+   {% for p in meeting_list %}
+   <li>{{ p.attendance }}</li>
+   <li>{{ p.minutestext }}</li>
+   
+   {% endfor %}
+</ul>
+
+{% endblock %}

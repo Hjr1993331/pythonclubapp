@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Meetings</h2>
+<ul>
+   {% for p in meeting_list %}
+   <li>{{ p.meetingtitle }}</li>
+   <li>{{ p.meetinglocation }}</li>
+   <li>{{ p.user }}</li>
+   <li>{{ p.meetingtype }}</li>
+   <li>{{ p.meetingtime }}</li>
+   <li>{{ p.dateentered }}</li>
+   {% endfor %}
+</ul>
+
+{% endblock %}
