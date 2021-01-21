@@ -10,10 +10,10 @@ def meetings(request):
     meeting_list = Meeting.objects.all()
     return render(request, 'pythonclubapp/meetings.html', {'meeting_list': meeting_list})
 
-def meetings(request):
-    meeting_list = Meeting.objects.all()
+def meetingminutes(request):
+    meetingminute_list = MeetingMinute.objects.all()
     return render(request, 'pythonclubapp/meetingminutes.html', {'meetingminute_list': meetingminute_list})
 
-def meetings(request):
-    meeting_list = Meeting.objects.all()
+def resources(request):
+    resource_list = Resource.objects.all()
     return render(request, 'pythonclubapp/resources.html', {'resource_list': resource_list})    
