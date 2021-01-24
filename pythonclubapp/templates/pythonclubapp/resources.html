@@ -3,15 +3,15 @@
 <h2>Resources</h2>
 <ul>
    {% for p in resource_list %}
-   <li>{{ p.name }}</li>
-   <li>{{ p.location }}</li>
-   <li>{{ p.user }}</li>
-   <li>{{ p.meeting }}</li>
-   <li>{{ p.time }}</li>
-   <li>{{ p.date }}</li>
-   <li>{{ p.text }}</li>
-   <li>{{ p.url }}</li>
-   <li>{{ p.description }}</li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.name }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.location }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.user }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.meeting }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.time }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.date }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.text }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.url }}</a></li>
+   <li><a href="% url 'detail2' id=p.id %}">{{ p.description }}</a></li>
    {% endfor %}
 </ul>
 
